@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -45,16 +44,17 @@ const ContactForm = () => {
       submissions.push(newSubmission);
       localStorage.setItem("formSubmissions", JSON.stringify(submissions));
       
-      // Send email using EmailJS
+      // Format the data for the email template
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         service_requested: formData.service,
         message: formData.message,
-        to_email: "soochkamalprit@gmail.com",
-        reply_to: formData.email,
+        submission_date: new Date().toLocaleString(),
+        to_name: "Sooch Law Office",
       };
-      
+
+      // Send owner notification email with form details
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -62,11 +62,11 @@ const ContactForm = () => {
         EMAILJS_USER_ID
       );
       
-      console.log("Email sent successfully to soochkamalprit@gmail.com");
+      console.log("Form submission email sent to owner");
       
       // Show success toast
       toast.success("Form submitted successfully! We'll contact you soon.", {
-        description: "A confirmation has been sent to the law office.",
+        description: "Your information has been received by our office.",
       });
       
       // Reset form after submission
@@ -236,8 +236,7 @@ const ContactForm = () => {
                 {!isSubmitting && <Send size={18} className="ml-2" />}
               </button>
             </form>
-            )}
-          </div>
+          )}
         </div>
       </div>
     </section>
