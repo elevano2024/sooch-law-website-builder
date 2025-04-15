@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,9 +7,9 @@ import { toast } from "@/components/ui/sonner";
 import emailjs from "emailjs-com";
 
 // Updated EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_3zhhm5v";
-const EMAILJS_TEMPLATE_ID = "template_vzyfd8f"; // Updated template ID
-const EMAILJS_USER_ID = "B6tdpocoFnOyBSx-O";
+const EMAILJS_SERVICE_ID = "service_l3w246u";
+const EMAILJS_TEMPLATE_ID = "template_iv56ydw";
+const EMAILJS_USER_ID = "lTW-SHGL2sZD5EDdQ"; // This is the public key
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +53,7 @@ const ContactForm = () => {
         message: formData.message,
         submission_date: new Date().toLocaleString(),
         to_name: "Sooch Law Office",
+        to_email: "soochkamalprit@gmail.com", // Ensure emails go only to this address
       };
 
       // Add detailed console logs for debugging
