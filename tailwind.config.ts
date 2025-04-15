@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,9 @@ export default {
 					light: '#F5D6A3',
 					dark: '#1A1F2C',
 					gray: '#8E9196',
+					darkbg: '#121520', // New dark background
+					darkaccent: '#272C3A', // New dark accent color
+					darkcard: '#1E2130', // New dark card background
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

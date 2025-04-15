@@ -1,3 +1,4 @@
+
 #root {
   width: 100%;
   margin: 0 auto;
@@ -11,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(231, 168, 69, 0.7));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em rgba(231, 168, 69, 0.7));
 }
 
 @keyframes logo-spin {
@@ -38,4 +39,22 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1f2c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8E9196;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E7A845;
 }

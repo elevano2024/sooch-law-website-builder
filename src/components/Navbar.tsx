@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white py-4 sticky top-0 z-50 shadow-sm backdrop-blur-sm bg-white/95">
+    <nav className="bg-sooch-darkbg py-4 sticky top-0 z-50 shadow-md backdrop-blur-sm bg-opacity-95">
       <div className="container-custom">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -27,16 +27,16 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="font-medium text-gray-800 hover:text-sooch-gold transition-colors">
+            <Link to="/" className="font-medium text-gray-300 hover:text-sooch-gold transition-colors">
               Home
             </Link>
-            <Link to="/services" className="font-medium text-gray-800 hover:text-sooch-gold transition-colors">
+            <Link to="/services" className="font-medium text-gray-300 hover:text-sooch-gold transition-colors">
               Services
             </Link>
-            <Link to="/about" className="font-medium text-gray-800 hover:text-sooch-gold transition-colors">
+            <Link to="/about" className="font-medium text-gray-300 hover:text-sooch-gold transition-colors">
               About Us
             </Link>
-            <Link to="/contact" className="font-medium text-gray-800 hover:text-sooch-gold transition-colors">
+            <Link to="/contact" className="font-medium text-gray-300 hover:text-sooch-gold transition-colors">
               Contact
             </Link>
           </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={toggleMenu}
-              className="text-gray-800 hover:text-sooch-gold focus:outline-none"
+              className="text-gray-300 hover:text-sooch-gold focus:outline-none"
             >
               {isMenuOpen ? (
                 <X size={24} />
@@ -74,28 +74,28 @@ const Navbar = () => {
               <Link 
                 to="/" 
                 onClick={() => setIsMenuOpen(false)}
-                className="font-medium text-gray-800 hover:text-sooch-gold transition-colors py-2"
+                className="font-medium text-gray-300 hover:text-sooch-gold transition-colors py-2"
               >
                 Home
               </Link>
               <Link 
                 to="/services" 
                 onClick={() => setIsMenuOpen(false)}
-                className="font-medium text-gray-800 hover:text-sooch-gold transition-colors py-2"
+                className="font-medium text-gray-300 hover:text-sooch-gold transition-colors py-2"
               >
                 Services
               </Link>
               <Link 
                 to="/about" 
                 onClick={() => setIsMenuOpen(false)}
-                className="font-medium text-gray-800 hover:text-sooch-gold transition-colors py-2"
+                className="font-medium text-gray-300 hover:text-sooch-gold transition-colors py-2"
               >
                 About Us
               </Link>
               <Link 
                 to="/contact" 
                 onClick={() => setIsMenuOpen(false)}
-                className="font-medium text-gray-800 hover:text-sooch-gold transition-colors py-2"
+                className="font-medium text-gray-300 hover:text-sooch-gold transition-colors py-2"
               >
                 Contact
               </Link>
