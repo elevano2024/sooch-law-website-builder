@@ -1,3 +1,4 @@
+
 import { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "@/components/AnimatedElement";
@@ -42,7 +43,7 @@ const ServiceHero = ({ title, heading, description, heroVideo, heroImage }: Serv
         <div 
           className="absolute inset-0 opacity-30 bg-center bg-cover" 
           style={{ 
-            backgroundImage: `url(/lovable-uploads/64151993-464c-4540-9eb4-9c344a541911.png)`,
+            backgroundImage: `url(https://images.unsplash.com/photo-1496307653780-42ee777d4833)`,
             backgroundAttachment: 'fixed'
           }}
         ></div>
@@ -93,7 +94,7 @@ const ServiceHero = ({ title, heading, description, heroVideo, heroImage }: Serv
           <AnimatedElement delay={0.2}>
             <div className="hidden lg:block rounded-lg overflow-hidden shadow-2xl border-4 border-law-secondary transform rotate-2 hover:rotate-0 transition-all duration-300">
               <img 
-                src="/lovable-uploads/5b973c6e-222e-409c-85f1-1fa4f4889812.png" 
+                src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e" 
                 alt="Real Estate Legal Services - Sooch Law" 
                 className="w-full h-full object-cover aspect-video"
               />
