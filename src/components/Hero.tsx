@@ -1,6 +1,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -8,6 +9,17 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-sooch-dark to-black opacity-90"></div>
       <div className="container-custom py-24 md:py-32 relative z-10">
         <div className="max-w-3xl">
+          {/* Add logo to the hero section */}
+          <div className="mb-8">
+            <Link to="/">
+              <img 
+                src="/lovable-uploads/06d3ec0c-2aa2-4f53-a861-95daba926881.png" 
+                alt="Sooch Law Logo" 
+                className="h-16"
+              />
+            </Link>
+          </div>
+          
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,3 +65,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
