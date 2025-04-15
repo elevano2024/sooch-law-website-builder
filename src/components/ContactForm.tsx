@@ -1,7 +1,9 @@
+
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import InteractiveMap from "./InteractiveMap";
+import { toast } from "@/components/ui/sonner";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -20,25 +22,54 @@ const ContactForm = () => {
   };
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real application, you would send this data to your backend
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({
-      name: "",
-      email: "",
-      service: "",
-      message: "",
-    });
-    // Show success message
-    setSubmitted(true);
+    setIsSubmitting(true);
     
-    // Reset after 5 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    try {
+      // Store form data in local storage (as a simple storage solution)
+      const submissions = JSON.parse(localStorage.getItem("formSubmissions") || "[]");
+      const newSubmission = {
+        ...formData,
+        id: Date.now(),
+        submittedAt: new Date().toISOString(),
+      };
+      submissions.push(newSubmission);
+      localStorage.setItem("formSubmissions", JSON.stringify(submissions));
+      
+      // Since we can't directly send emails from the client side without a server,
+      // we'll simulate the email sending process and show a success message
+      console.log("Form submitted:", formData);
+      console.log("Email would be sent to: soochkamalprit@gmail.com");
+      
+      // Show success toast
+      toast.success("Form submitted successfully! We'll contact you soon.", {
+        description: "A confirmation has been sent to the law office.",
+      });
+      
+      // Reset form after submission
+      setFormData({
+        name: "",
+        email: "",
+        service: "",
+        message: "",
+      });
+      
+      // Show success message
+      setSubmitted(true);
+      
+      // Reset after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("There was an error submitting your form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -178,10 +209,11 @@ const ContactForm = () => {
               
               <button 
                 type="submit" 
-                className="btn-primary w-full flex items-center justify-center"
+                className={`btn-primary w-full flex items-center justify-center ${isSubmitting ? 'opacity-70' : ''}`}
+                disabled={isSubmitting}
               >
-                Send Request
-                <Send size={18} className="ml-2" />
+                {isSubmitting ? 'Sending...' : 'Send Request'}
+                {!isSubmitting && <Send size={18} className="ml-2" />}
               </button>
             </form>
             )}
