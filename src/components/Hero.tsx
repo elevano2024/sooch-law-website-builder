@@ -2,11 +2,36 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Auto-play prevented:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative bg-sooch-dark text-white">
-      <div className="absolute inset-0 bg-gradient-to-r from-sooch-dark to-black opacity-90"></div>
+      {/* Video Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video 
+          ref={videoRef}
+          className="absolute w-full h-full object-cover opacity-20"
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="https://player.vimeo.com/progressive_redirect/playback/803544550/rendition/1080p/file.mp4?loc=external&signature=65ea6141111ee04e1cf562c5045e4d9c8f7e872ca5ad48168b3456bba67ae725" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-sooch-dark to-black opacity-90"></div>
+      </div>
+      
       <div className="container-custom py-24 md:py-32 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           {/* Left Column - Text Content */}
