@@ -22,7 +22,6 @@ const ContactPage = () => {
           </p>
         </div>
       </div>
-      <ContactForm />
       
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
@@ -36,7 +35,7 @@ const ContactPage = () => {
               href="https://www.google.com/maps/dir/?api=1&destination=506-218+Export+Blvd,+Mississauga,+ON,+L5S+0A7,+Canada" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-sooch-gold hover:text-sooch-dark transition-colors"
+              className="inline-flex items-center text-sooch-gold hover:text-sooch-dark transition-colors mb-6"
             >
               <Navigation size={18} className="mr-1" />
               <span>Get Directions</span>
@@ -48,9 +47,10 @@ const ContactPage = () => {
         </div>
       </section>
       
+      <ContactForm />
       <Footer />
     </div>
   );
-};
+}
 
 export default ContactPage;
