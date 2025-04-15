@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -155,88 +156,89 @@ const ContactForm = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="input-field"
-                  placeholder="John Doe"
-                />
-              </div>
-              
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="input-field"
-                  placeholder="john@example.com"
-                />
-              </div>
-              
-              <div className="mb-4">
-                <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
-                  Select
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="input-field"
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="input-field"
+                    placeholder="John Doe"
+                  />
+                </div>
+                
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="input-field"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                
+                <div className="mb-4">
+                  <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
+                    Select
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="input-field"
+                  >
+                    <option value="" disabled>Select a service</option>
+                    <option value="real-estate">Real Estate</option>
+                    <option value="personal-injury">Personal Injury</option>
+                    <option value="civil-litigation">Civil Litigation</option>
+                    <option value="wills-estates">Wills and Estates</option>
+                    <option value="power-of-attorney">Power of Attorney</option>
+                    <option value="small-claims">Small Claims</option>
+                    <option value="immigration">Immigration</option>
+                    <option value="family-law">Family Law</option>
+                  </select>
+                </div>
+                
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+                    Please provide some details regarding your inquiry:
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={4}
+                    className="input-field resize-none"
+                    placeholder="Please describe your legal needs..."
+                  ></textarea>
+                </div>
+                
+                <button 
+                  type="submit" 
+                  className={`btn-primary w-full flex items-center justify-center ${isSubmitting ? 'opacity-70' : ''}`}
+                  disabled={isSubmitting}
                 >
-                  <option value="" disabled>Select a service</option>
-                  <option value="real-estate">Real Estate</option>
-                  <option value="personal-injury">Personal Injury</option>
-                  <option value="civil-litigation">Civil Litigation</option>
-                  <option value="wills-estates">Wills and Estates</option>
-                  <option value="power-of-attorney">Power of Attorney</option>
-                  <option value="small-claims">Small Claims</option>
-                  <option value="immigration">Immigration</option>
-                  <option value="family-law">Family Law</option>
-                </select>
-              </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                  Please provide some details regarding your inquiry:
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="input-field resize-none"
-                  placeholder="Please describe your legal needs..."
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit" 
-                className={`btn-primary w-full flex items-center justify-center ${isSubmitting ? 'opacity-70' : ''}`}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Request'}
-                {!isSubmitting && <Send size={18} className="ml-2" />}
-              </button>
-            </form>
-          )}
+                  {isSubmitting ? 'Sending...' : 'Send Request'}
+                  {!isSubmitting && <Send size={18} className="ml-2" />}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>
