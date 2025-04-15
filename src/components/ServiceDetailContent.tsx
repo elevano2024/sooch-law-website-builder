@@ -1,10 +1,10 @@
-
 import { Building, FileText, Key, ThumbsUp, ShieldCheck, Home, Briefcase, ArrowRight, Phone, Clock, BarChart4, Award, Users, CheckCircle2, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "./AnimatedElement";
 import { Card, CardContent } from "./ui/card";
 import { useParams, Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
 
 const servicesData = {
   "real-estate": {
@@ -13,6 +13,7 @@ const servicesData = {
     description: "Our experienced real estate lawyers provide comprehensive legal services for property transactions throughout the Greater Toronto Area. Whether you're buying, selling, or refinancing, our team ensures your interests are protected at every step.",
     image: "/lovable-uploads/06d3ec0c-2aa2-4f53-a861-95daba926881.png",
     heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2662&q=80",
+    heroVideo: "https://player.vimeo.com/progressive_redirect/playback/803544550/rendition/1080p/file.mp4?loc=external&signature=65ea6141111ee04e1cf562c5045e4d9c8f7e872ca5ad48168b3456bba67ae725",
     stats: [
       { value: "25+", label: "Years Experience" },
       { value: "5,000+", label: "Successful Transactions" },
@@ -59,6 +60,44 @@ const servicesData = {
         description: "Comprehensive legal services for property refinancing, ensuring favorable terms and conditions.",
         icon: <Briefcase className="h-10 w-10 text-sooch-gold" />,
         image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2662&q=80"
+      }
+    ],
+    allServices: [
+      {
+        title: "Residential Real Estate",
+        description: "Legal services for buying, selling, and refinancing residential properties.",
+        image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2296&q=80",
+        link: "/service/residential-real-estate"
+      },
+      {
+        title: "Commercial Real Estate",
+        description: "Legal assistance for commercial property transactions, leases, and developments.",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+        link: "/service/commercial-real-estate"
+      },
+      {
+        title: "Property Development",
+        description: "Legal guidance for developers throughout the planning and construction process.",
+        image: "https://images.unsplash.com/photo-1531971589569-0d9370cbe1e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2781&q=80",
+        link: "/service/property-development"
+      },
+      {
+        title: "Mortgage Refinancing",
+        description: "Expert legal counsel for refinancing mortgages and securing favorable terms.",
+        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+        link: "/service/mortgage-refinancing"
+      },
+      {
+        title: "Title Insurance",
+        description: "Protection against potential title defects and ownership disputes.",
+        image: "https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2342&q=80",
+        link: "/service/title-insurance"
+      },
+      {
+        title: "Property Disputes",
+        description: "Legal representation for resolving boundary disputes and property conflicts.",
+        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+        link: "/service/property-disputes"
       }
     ],
     teamMembers: [
@@ -120,20 +159,44 @@ const servicesData = {
 const ServiceDetailContent = () => {
   const { slug } = useParams();
   const serviceData = servicesData[slug as keyof typeof servicesData] || servicesData["real-estate"];
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Auto-play prevented:", error);
+      });
+    }
+  }, []);
   
   return (
     <div>
-      {/* Hero Section with Parallax Effect */}
+      {/* Hero Section with Video Background */}
       <section className="relative bg-sooch-dark text-white overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-20 bg-center bg-cover" 
-          style={{ 
-            backgroundImage: `url(${serviceData.heroImage})`,
-            backgroundAttachment: 'fixed'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-sooch-dark to-transparent"></div>
-        <div className="relative container-custom py-20 md:py-28 lg:py-36">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+          <video 
+            ref={videoRef}
+            className="absolute w-full h-full object-cover opacity-40"
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          >
+            <source src={serviceData.heroVideo} type="video/mp4" />
+            {/* Fallback to image if video fails */}
+            <div 
+              className="absolute inset-0 opacity-20 bg-center bg-cover" 
+              style={{ 
+                backgroundImage: `url(${serviceData.heroImage})`,
+                backgroundAttachment: 'fixed'
+              }}
+            />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-sooch-dark to-transparent z-10"></div>
+        </div>
+        
+        <div className="relative container-custom py-20 md:py-28 lg:py-36 z-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedElement>
               <div className="text-white max-w-2xl">
@@ -248,6 +311,50 @@ const ServiceDetailContent = () => {
                     <p className="text-gray-600">{benefit.description}</p>
                   </CardContent>
                 </Card>
+              </AnimatedElement>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Real Estate Services Section */}
+      <section className="py-16 bg-white">
+        <div className="container-custom">
+          <AnimatedElement>
+            <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
+              Our <span className="text-sooch-gold">Real Estate</span> Services
+            </h2>
+            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
+              Comprehensive legal expertise for all your real estate needs
+            </p>
+            <div className="w-24 h-1 bg-sooch-gold mx-auto mb-12"></div>
+          </AnimatedElement>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceData.allServices.map((service, index) => (
+              <AnimatedElement key={index} delay={index * 0.1}>
+                <div className="group h-full overflow-hidden rounded-lg shadow-md border border-gray-200 hover:shadow-xl hover:border-sooch-gold transition-all duration-300">
+                  <div className="relative h-60 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+                    <div className="absolute bottom-0 left-0 p-6">
+                      <h3 className="text-xl font-playfair font-bold text-white mb-1">{service.title}</h3>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-600 mb-4">{service.description}</p>
+                    <Link 
+                      to={service.link}
+                      className="inline-flex items-center text-sooch-gold font-medium hover:text-amber-600 transition-colors"
+                    >
+                      Learn more <ArrowRight size={16} className="ml-1" />
+                    </Link>
+                  </div>
+                </div>
               </AnimatedElement>
             ))}
           </div>
@@ -398,161 +505,4 @@ const ServiceDetailContent = () => {
                   </div>
                   <div className="md:order-1 hidden md:block">
                     <div className="rounded-lg overflow-hidden shadow-md">
-                      <img src="https://images.unsplash.com/photo-1628863353691-0095ca4908cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" alt="Closing" className="w-full h-64 object-cover" />
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Our Team Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <AnimatedElement>
-            <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
-              Meet Our <span className="text-sooch-gold">Team</span>
-            </h2>
-            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
-              Our experienced professionals are dedicated to providing exceptional legal services
-            </p>
-            <div className="w-24 h-1 bg-sooch-gold mx-auto mb-12"></div>
-          </AnimatedElement>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {serviceData.teamMembers.map((member, index) => (
-              <AnimatedElement key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
-                  <div className="md:w-1/3">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover object-center aspect-square md:aspect-auto"
-                    />
-                  </div>
-                  <div className="p-6 md:w-2/3">
-                    <h3 className="text-xl font-playfair font-bold mb-2">{member.name}</h3>
-                    <div className="text-sooch-gold font-medium mb-4">{member.title}</div>
-                    <p className="text-gray-600 mb-4">{member.bio}</p>
-                    <Button variant="outline" className="border-sooch-gold text-sooch-gold hover:bg-sooch-gold hover:text-white">
-                      View Profile
-                    </Button>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <AnimatedElement>
-            <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
-              Client <span className="text-sooch-gold">Testimonials</span>
-            </h2>
-            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
-              Don't just take our word for it - hear what our clients have to say
-            </p>
-            <div className="w-24 h-1 bg-sooch-gold mx-auto mb-12"></div>
-          </AnimatedElement>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {serviceData.testimonials.map((testimonial, index) => (
-              <AnimatedElement key={index} delay={index * 0.1}>
-                <div className="bg-gray-50 p-8 rounded-lg shadow-md relative h-full">
-                  <div className="text-4xl text-sooch-gold font-serif absolute top-4 left-4 opacity-20">"</div>
-                  <div className="relative z-10">
-                    <p className="text-gray-700 mb-6 italic">{testimonial.text}</p>
-                    <div className="flex items-center justify-between">
-                      <div className="font-medium text-gray-900">{testimonial.author}</div>
-                      <div className="flex">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5 text-sooch-gold" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section with Accordion Style */}
-      <section className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <AnimatedElement>
-            <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
-              Frequently Asked <span className="text-sooch-gold">Questions</span>
-            </h2>
-            <div className="w-24 h-1 bg-sooch-gold mx-auto mb-12"></div>
-          </AnimatedElement>
-
-          <div className="max-w-4xl mx-auto">
-            {serviceData.faq.map((item, index) => (
-              <AnimatedElement key={index} delay={index * 0.1}>
-                <div className="mb-6 bg-white rounded-lg p-6 shadow-sm border border-gray-200">
-                  <div className="mb-3">
-                    <h3 className="text-xl font-playfair font-bold text-gray-900">{item.question}</h3>
-                  </div>
-                  <div>
-                    <p className="text-gray-600">{item.answer}</p>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section with Background Image */}
-      <section className="py-16 relative">
-        <div className="absolute inset-0 bg-sooch-dark opacity-90 z-0"></div>
-        <div 
-          className="absolute inset-0 opacity-20 bg-center bg-cover z-0" 
-          style={{ 
-            backgroundImage: `url(${serviceData.heroImage})`,
-          }}
-        />
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <AnimatedElement>
-              <h2 className="text-3xl md:text-4xl font-bold font-playfair mb-6 text-white">Ready to Get Started?</h2>
-              <p className="text-xl text-gray-200 mb-8">
-                Our experienced team is ready to assist with your real estate legal needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  className="bg-sooch-gold hover:bg-amber-600 text-white px-8 py-6 text-lg flex items-center justify-center"
-                  onClick={() => {
-                    const contactSection = document.getElementById('contact-form');
-                    contactSection?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Schedule a Consultation
-                </Button>
-                <a 
-                  href="tel:4169083300" 
-                  className="bg-transparent border-2 border-sooch-gold text-sooch-gold hover:bg-sooch-gold hover:text-white px-8 py-5 rounded-md text-lg flex items-center justify-center transition-colors"
-                >
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Us Now
-                </a>
-              </div>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default ServiceDetailContent;
+                      <img src="https://images.unsplash.com/photo-1628863353691-0095ca4908cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1
