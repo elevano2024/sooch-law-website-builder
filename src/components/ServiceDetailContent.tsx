@@ -1,4 +1,3 @@
-
 import { Building, FileText, Key, ThumbsUp, ShieldCheck, Home, Briefcase, ArrowRight, Phone, Clock, BarChart4, Award, Users, CheckCircle2, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "./AnimatedElement";
@@ -97,7 +96,7 @@ const servicesData = {
       {
         title: "Property Disputes",
         description: "Legal representation for resolving boundary disputes and property conflicts.",
-        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
+        image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
         link: "/service/property-disputes"
       }
     ],
@@ -318,51 +317,7 @@ const ServiceDetailContent = () => {
         </div>
       </section>
 
-      {/* All Real Estate Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container-custom">
-          <AnimatedElement>
-            <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
-              Our <span className="text-sooch-gold">Real Estate</span> Services
-            </h2>
-            <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
-              Comprehensive legal expertise for all your real estate needs
-            </p>
-            <div className="w-24 h-1 bg-sooch-gold mx-auto mb-12"></div>
-          </AnimatedElement>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceData.allServices.map((service, index) => (
-              <AnimatedElement key={index} delay={index * 0.1}>
-                <div className="group h-full overflow-hidden rounded-lg shadow-md border border-gray-200 hover:shadow-xl hover:border-sooch-gold transition-all duration-300">
-                  <div className="relative h-60 overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
-                    <div className="absolute bottom-0 left-0 p-6">
-                      <h3 className="text-xl font-playfair font-bold text-white mb-1">{service.title}</h3>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4">{service.description}</p>
-                    <Link 
-                      to={service.link}
-                      className="inline-flex items-center text-sooch-gold font-medium hover:text-amber-600 transition-colors"
-                    >
-                      Learn more <ArrowRight size={16} className="ml-1" />
-                    </Link>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section with Images */}
+      {/* Clean Services Section - UPDATED */}
       <section className="py-16 bg-gray-50">
         <div className="container-custom">
           <AnimatedElement>
@@ -375,59 +330,28 @@ const ServiceDetailContent = () => {
             <div className="w-24 h-1 bg-sooch-gold mx-auto mb-12"></div>
           </AnimatedElement>
 
-          <div className="space-y-12">
-            {serviceData.services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {serviceData.allServices.map((service, index) => (
               <AnimatedElement key={index} delay={index * 0.1}>
-                <div className={cn(
-                  "grid grid-cols-1 lg:grid-cols-2 gap-8 items-center",
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                )}>
-                  <div className={cn(
-                    "order-2 lg:order-1",
-                    index % 2 === 1 ? "lg:order-2" : "lg:order-1"
-                  )}>
-                    <div className="bg-white p-8 rounded-lg shadow-md border border-gray-100 h-full">
-                      <div className="mb-6">{service.icon}</div>
-                      <h3 className="text-2xl font-playfair font-bold mb-4">{service.title}</h3>
-                      <p className="text-gray-600 mb-6">{service.description}</p>
-                      <ul className="space-y-3 mb-6">
-                        <li className="flex items-start">
-                          <CheckCircle2 className="h-5 w-5 text-sooch-gold mr-2 mt-1" />
-                          <span className="text-gray-700">Professional legal guidance</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle2 className="h-5 w-5 text-sooch-gold mr-2 mt-1" />
-                          <span className="text-gray-700">Document preparation and review</span>
-                        </li>
-                        <li className="flex items-start">
-                          <CheckCircle2 className="h-5 w-5 text-sooch-gold mr-2 mt-1" />
-                          <span className="text-gray-700">Protection of your legal rights</span>
-                        </li>
-                      </ul>
-                      <Button 
-                        onClick={() => {
-                          const contactSection = document.getElementById('contact-form');
-                          contactSection?.scrollIntoView({ behavior: 'smooth' });
-                        }}
-                        className="bg-sooch-gold hover:bg-amber-600 text-white"
-                      >
-                        Request Service
-                      </Button>
+                <Card className="h-full hover:shadow-md transition-all duration-300 hover:border-sooch-gold">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-sooch-gold/10 flex items-center justify-center flex-shrink-0">
+                        <ArrowRight className="h-5 w-5 text-sooch-gold" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-playfair font-bold mb-2">{service.title}</h3>
+                        <p className="text-gray-600 text-sm mb-3">{service.description}</p>
+                        <Link 
+                          to={service.link}
+                          className="inline-flex items-center text-sm text-sooch-gold font-medium hover:text-amber-600 transition-colors"
+                        >
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                  <div className={cn(
-                    "order-1 lg:order-2",
-                    index % 2 === 1 ? "lg:order-1" : "lg:order-2"
-                  )}>
-                    <div className="rounded-lg overflow-hidden shadow-lg border-4 border-white">
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="w-full h-full object-cover aspect-video"
-                      />
-                    </div>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               </AnimatedElement>
             ))}
           </div>
