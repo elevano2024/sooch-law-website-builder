@@ -6,10 +6,10 @@ import InteractiveMap from "./InteractiveMap";
 import { toast } from "@/components/ui/sonner";
 import emailjs from "emailjs-com";
 
-// Replace these with your own EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_id"; // You'll need to replace this
-const EMAILJS_TEMPLATE_ID = "template_id"; // You'll need to replace this
-const EMAILJS_USER_ID = "user_id"; // You'll need to replace this
+// Replace these with your own EmailJS credentials from your account
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Get this from your EmailJS dashboard > Email Services
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Get this from your EmailJS dashboard > Email Templates
+const EMAILJS_USER_ID = "YOUR_USER_ID"; // Get this from your EmailJS dashboard > Account > API Keys
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
