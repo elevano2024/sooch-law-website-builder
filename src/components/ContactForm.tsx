@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -82,6 +83,10 @@ const ContactForm = () => {
               </div>
             </div>
             
+            {/* Interactive Map */}
+            <div className="mb-6 rounded-lg overflow-hidden shadow-md">
+              <InteractiveMap height="200px" compact={true} />
+            </div>
             
             <Link 
               to="/contact" 
