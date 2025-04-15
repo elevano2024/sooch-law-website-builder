@@ -4,6 +4,12 @@ import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import InteractiveMap from "./InteractiveMap";
 import { toast } from "@/components/ui/sonner";
+import emailjs from "emailjs-com";
+
+// Replace these with your own EmailJS credentials
+const EMAILJS_SERVICE_ID = "service_id"; // You'll need to replace this
+const EMAILJS_TEMPLATE_ID = "template_id"; // You'll need to replace this
+const EMAILJS_USER_ID = "user_id"; // You'll need to replace this
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -39,10 +45,24 @@ const ContactForm = () => {
       submissions.push(newSubmission);
       localStorage.setItem("formSubmissions", JSON.stringify(submissions));
       
-      // Since we can't directly send emails from the client side without a server,
-      // we'll simulate the email sending process and show a success message
-      console.log("Form submitted:", formData);
-      console.log("Email would be sent to: soochkamalprit@gmail.com");
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        service_requested: formData.service,
+        message: formData.message,
+        to_email: "soochkamalprit@gmail.com",
+        reply_to: formData.email,
+      };
+      
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_USER_ID
+      );
+      
+      console.log("Email sent successfully to soochkamalprit@gmail.com");
       
       // Show success toast
       toast.success("Form submitted successfully! We'll contact you soon.", {
