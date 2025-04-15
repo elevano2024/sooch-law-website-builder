@@ -1,6 +1,7 @@
 
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -80,6 +81,14 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
+            
+            <Link 
+              to="/contact" 
+              className="inline-flex items-center text-sooch-gold hover:text-sooch-dark transition-colors mb-6"
+            >
+              <Navigation size={18} className="mr-1" />
+              <span>View Our Location On Map</span>
+            </Link>
           </div>
           
           <div className="bg-gray-50 p-8 rounded-lg shadow-md">
