@@ -1,3 +1,4 @@
+
 import { Building, FileText, Key, ThumbsUp, ShieldCheck, Home, Briefcase, ArrowRight, Phone, Clock, BarChart4, Award, Users, CheckCircle2, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "./AnimatedElement";
@@ -415,7 +416,7 @@ const ServiceDetailContent = () => {
                   </div>
                   <div className="hidden md:block">
                     <div className="rounded-lg overflow-hidden shadow-md">
-                      <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2676&q=80" alt="Due Diligence" className="w-full h-64 object-cover" />
+                      <img src="/lovable-uploads/64151993-464c-4540-9eb4-9c344a541911.png" alt="Due Diligence" className="w-full h-64 object-cover" />
                     </div>
                   </div>
                 </div>
