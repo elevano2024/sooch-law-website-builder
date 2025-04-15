@@ -17,8 +17,8 @@ const ServiceDetail = () => {
 
   // Format the slug for SEO title
   const formattedTitle = slug
-    ? `${slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")} Law Services - Jaramillo Law PC`
-    : "Legal Services - Jaramillo Law PC";
+    ? `${slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")} Law Services - Sooch Law`
+    : "Legal Services - Sooch Law";
   
   const metaDescription = "Expert legal services for property transactions, including purchases, sales, refinancing, and title transfers. Mobile signing available throughout Ontario.";
   

@@ -40,7 +40,7 @@ const QuickContact = () => {
                 Get in <span className="text-law-primary">Touch</span>
               </h2>
               <p className="text-gray-600 mb-8">
-                Our team of experienced real estate lawyers is ready to assist you with all your legal needs. Contact us today for a consultation.
+                Our team of experienced real estate lawyers at Sooch Law is ready to assist you with all your legal needs. Contact us today for a consultation.
               </p>
               
               <div className="space-y-6 mb-8">

@@ -25,7 +25,7 @@ const ServiceFAQ = ({ faqItems }: ServiceFAQProps) => {
             Frequently Asked <span className="text-law-primary">Questions</span>
           </h2>
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
-            Get answers to common questions about our real estate legal services
+            Get answers to common questions about Sooch Law's real estate legal services
           </p>
           <div className="w-24 h-1 bg-law-secondary mx-auto mb-12"></div>
         </AnimatedElement>

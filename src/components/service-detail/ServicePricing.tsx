@@ -90,7 +90,7 @@ const ServicePricing = () => {
             Transparent <span className="text-law-primary">Pricing</span>
           </h2>
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
-            Straightforward legal fees with no hidden costs
+            Straightforward legal fees with no hidden costs at Sooch Law
           </p>
           <div className="w-24 h-1 bg-law-secondary mx-auto mb-12"></div>
         </AnimatedElement>

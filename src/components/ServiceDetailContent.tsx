@@ -28,12 +28,12 @@ const servicesData = {
     ],
     testimonials: [
       {
-        text: "The team at Jaramillo Law made my first home purchase stress-free. They explained everything clearly and were always available for questions.",
+        text: "The team at Sooch Law made my first home purchase stress-free. They explained everything clearly and were always available for questions.",
         author: "Michael T., Mississauga",
         rating: 5
       },
       {
-        text: "I've used Jaramillo Law for multiple property transactions and have always been impressed with their knowledge and attention to detail.",
+        text: "I've used Sooch Law for multiple property transactions and have always been impressed with their knowledge and attention to detail.",
         author: "Jennifer K., Brampton",
         rating: 5
       },

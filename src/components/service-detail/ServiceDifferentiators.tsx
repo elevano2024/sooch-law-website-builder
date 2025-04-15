@@ -42,7 +42,7 @@ const ServiceDifferentiators = () => {
       <div className="container-custom">
         <AnimatedElement>
           <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
-            Why Choose <span className="text-law-primary">Our Services</span>
+            Why Choose <span className="text-law-primary">Sooch Law</span>
           </h2>
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-4">
             What sets us apart from other real estate law firms
