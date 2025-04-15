@@ -1,4 +1,3 @@
-
 import { Building, FileText, Key, ThumbsUp, ShieldCheck, Home, Briefcase, ArrowRight, Phone, Clock, BarChart4, Award, Users, CheckCircle2, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "./AnimatedElement";
@@ -185,15 +184,15 @@ const ServiceDetailContent = () => {
             playsInline
           >
             <source src={serviceData.heroVideo} type="video/mp4" />
+            {/* Fallback to image if video fails */}
+            <div 
+              className="absolute inset-0 opacity-20 bg-center bg-cover" 
+              style={{ 
+                backgroundImage: `url(${serviceData.heroImage})`,
+                backgroundAttachment: 'fixed'
+              }}
+            />
           </video>
-          {/* Fallback to image if video fails */}
-          <div 
-            className="absolute inset-0 opacity-20 bg-center bg-cover" 
-            style={{ 
-              backgroundImage: `url(${serviceData.heroImage})`,
-              backgroundAttachment: 'fixed'
-            }}
-          ></div>
           <div className="absolute inset-0 bg-gradient-to-r from-sooch-dark to-transparent z-10"></div>
         </div>
         
@@ -506,17 +505,4 @@ const ServiceDetailContent = () => {
                   </div>
                   <div className="md:order-1 hidden md:block">
                     <div className="rounded-lg overflow-hidden shadow-md">
-                      <img src="https://images.unsplash.com/photo-1628863353691-0095ca4908cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" alt="Closing" className="w-full h-64 object-cover" />
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default ServiceDetailContent;
+                      <img src="https://images.unsplash.com/photo-1628863353691-0095ca4908cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1
