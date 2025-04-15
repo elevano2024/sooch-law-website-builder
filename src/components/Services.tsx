@@ -1,6 +1,7 @@
 
 import { Building, Scale, Heart, FileText, Key, MessageCircle, Globe, Users } from "lucide-react";
 import AnimatedElement from "./AnimatedElement";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -8,41 +9,49 @@ const Services = () => {
       title: "Real Estate",
       description: "Expert legal guidance for property purchases, sales, and refinances.",
       icon: <Building className="h-10 w-10 text-sooch-gold" />,
+      slug: "real-estate"
     },
     {
       title: "Personal Injury",
       description: "Dedicated representation for accident victims seeking rightful compensation.",
       icon: <Heart className="h-10 w-10 text-sooch-gold" />,
+      slug: "personal-injury"
     },
     {
       title: "Civil Litigation",
       description: "Effective legal advocacy in resolving disputes through court proceedings.",
       icon: <Scale className="h-10 w-10 text-sooch-gold" />,
+      slug: "civil-litigation"
     },
     {
       title: "Wills and Estates",
       description: "Comprehensive planning for asset protection and inheritance distribution.",
       icon: <FileText className="h-10 w-10 text-sooch-gold" />,
+      slug: "wills-estates"
     },
     {
       title: "Power of Attorney",
       description: "Professional guidance in designating legal representation for personal matters.",
       icon: <Key className="h-10 w-10 text-sooch-gold" />,
+      slug: "power-of-attorney"
     },
     {
       title: "Small Claims",
       description: "Strategic handling of disputes under the Small Claims Court jurisdiction.",
       icon: <MessageCircle className="h-10 w-10 text-sooch-gold" />,
+      slug: "small-claims"
     },
     {
       title: "Immigration",
       description: "Assisting with various immigration matters and applications.",
       icon: <Globe className="h-10 w-10 text-sooch-gold" />,
+      slug: "immigration"
     },
     {
       title: "Family Law",
       description: "Compassionate guidance through divorce, custody, and support matters.",
       icon: <Users className="h-10 w-10 text-sooch-gold" />,
+      slug: "family-law"
     },
   ];
 
@@ -50,14 +59,17 @@ const Services = () => {
     {
       title: "Purchase",
       description: "We will assist you with every aspect of your purchase transaction, from reviewing and drafting the Agreement of Purchase and Sale to conducting a title search and closing the transaction.",
+      slug: "real-estate"
     },
     {
       title: "Sale",
       description: "We handle the preparation and execution of all legal documents, provide advice on any legal issues that may arise, and ensure that the transaction is completed efficiently and accurately.",
+      slug: "real-estate"
     },
     {
       title: "Refinance",
       description: "Refinancing your home can be a great way to save money or access equity for other purposes. We will work with your lender to ensure that all legal requirements are met.",
+      slug: "real-estate"
     },
   ];
 
@@ -84,7 +96,13 @@ const Services = () => {
                 <h3 className="text-xl font-playfair font-bold mb-3 group-hover:text-sooch-gold transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link 
+                  to={`/service/${service.slug}`}
+                  className="inline-flex items-center text-sooch-gold font-medium hover:text-amber-600 transition-colors"
+                >
+                  Learn more <span className="ml-1">→</span>
+                </Link>
               </div>
             </AnimatedElement>
           ))}
@@ -100,7 +118,13 @@ const Services = () => {
                 <h4 className="text-xl font-playfair font-semibold mb-4 text-sooch-gold">
                   {service.title}
                 </h4>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link 
+                  to={`/service/${service.slug}`}
+                  className="inline-flex items-center text-sooch-gold font-medium hover:text-amber-600 transition-colors"
+                >
+                  Learn more <span className="ml-1">→</span>
+                </Link>
               </div>
             ))}
           </div>
