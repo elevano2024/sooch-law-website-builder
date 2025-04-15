@@ -55,14 +55,18 @@ const ContactForm = () => {
         to_name: "Sooch Law Office",
       };
 
+      // Add detailed console logs for debugging
+      console.log("Sending email with params:", templateParams);
+
       // Send owner notification email with form details
-      await emailjs.send(
+      const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         templateParams,
         EMAILJS_USER_ID
       );
       
+      console.log("Email send response:", response);
       console.log("Form submission email sent to owner");
       
       // Show success toast
