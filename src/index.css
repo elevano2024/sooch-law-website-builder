@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,6 +43,12 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Law firm specific colors */
+    --law-primary: 207 70% 30%; /* Deep blue */
+    --law-secondary: 43 87% 60%; /* Gold accent */
+    --law-tertiary: 0 0% 95%; /* Light gray */
+    --law-dark: 206 33% 24%; /* Navy blue */
   }
 
   .dark {
@@ -121,6 +128,38 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+  
+  .bg-law-primary {
+    @apply bg-[hsl(207,70%,30%)];
+  }
+  
+  .bg-law-secondary {
+    @apply bg-[hsl(43,87%,60%)];
+  }
+  
+  .bg-law-tertiary {
+    @apply bg-[hsl(0,0%,95%)];
+  }
+  
+  .bg-law-dark {
+    @apply bg-[hsl(206,33%,24%)];
+  }
+  
+  .text-law-primary {
+    @apply text-[hsl(207,70%,30%)];
+  }
+  
+  .text-law-secondary {
+    @apply text-[hsl(43,87%,60%)];
+  }
+  
+  .border-law-primary {
+    @apply border-[hsl(207,70%,30%)];
+  }
+  
+  .border-law-secondary {
+    @apply border-[hsl(43,87%,60%)];
+  }
 }
 
 @keyframes loading {
@@ -158,5 +197,31 @@
   .service-card {
     @apply p-6 border border-gray-200 rounded-lg shadow-md transition-all duration-300
            hover:shadow-lg hover:border-sooch-gold;
+  }
+  
+  /* Law firm specific components */
+  .law-btn-primary {
+    @apply bg-[hsl(207,70%,30%)] text-white font-medium py-3 px-6 rounded transition-all 
+           hover:bg-[hsl(207,70%,25%)] focus:outline-none focus:ring-2 focus:ring-[hsl(207,70%,30%)] focus:ring-offset-2;
+  }
+  
+  .law-btn-secondary {
+    @apply bg-[hsl(43,87%,60%)] text-[hsl(207,70%,30%)] font-medium py-3 px-6 rounded transition-all 
+           hover:bg-[hsl(43,87%,55%)] focus:outline-none focus:ring-2 focus:ring-[hsl(43,87%,60%)] focus:ring-offset-2;
+  }
+  
+  .law-btn-outline {
+    @apply bg-transparent border-2 border-[hsl(207,70%,30%)] text-[hsl(207,70%,30%)] font-medium py-3 px-6 rounded
+           transition-all hover:bg-[hsl(207,70%,30%)] hover:text-white focus:outline-none focus:ring-2 
+           focus:ring-[hsl(207,70%,30%)] focus:ring-offset-2;
+  }
+  
+  .law-card {
+    @apply p-6 border border-gray-200 rounded-lg shadow-sm transition-all duration-300
+           hover:shadow-md hover:border-[hsl(207,70%,30%)];
+  }
+  
+  .price-tag {
+    @apply inline-block bg-[hsl(43,87%,60%)] text-[hsl(207,70%,30%)] font-bold py-1 px-3 rounded-full text-sm;
   }
 }

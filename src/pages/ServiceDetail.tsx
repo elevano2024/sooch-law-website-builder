@@ -17,14 +17,16 @@ const ServiceDetail = () => {
 
   // Format the slug for SEO title
   const formattedTitle = slug
-    ? `${slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")} Law Services`
-    : "Legal Services";
+    ? `${slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")} Law Services - Jaramillo Law PC`
+    : "Legal Services - Jaramillo Law PC";
+  
+  const metaDescription = "Expert legal services for property transactions, including purchases, sales, refinancing, and title transfers. Mobile signing available throughout Ontario.";
   
   return (
     <div className="min-h-screen bg-white">
       <MetaTags 
         title={formattedTitle}
-        description="Expert legal services for property transactions, including purchases, sales, refinancing, and more. Serving clients throughout the Greater Toronto Area."
+        description={metaDescription}
       />
       <Navbar />
       <ServiceDetailContent />
