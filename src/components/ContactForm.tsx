@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -68,7 +67,7 @@ const ContactForm = () => {
                 <Mail className="text-sooch-gold mt-1 mr-4" />
                 <div>
                   <h3 className="font-semibold text-gray-800">Email</h3>
-                  <p className="text-gray-600">kam@soochlaw.com</p>
+                  <p className="text-gray-600">soochkamalprit@gmail.com</p>
                 </div>
               </div>
               
