@@ -26,6 +26,7 @@ const ServiceHero = ({ title, heading, description, heroVideo, heroImage }: Serv
   return (
     <section className="relative bg-law-dark text-white overflow-hidden">
       {/* Video Background */}
+      
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         <video 
           ref={videoRef}
@@ -41,7 +42,7 @@ const ServiceHero = ({ title, heading, description, heroVideo, heroImage }: Serv
         <div 
           className="absolute inset-0 opacity-30 bg-center bg-cover" 
           style={{ 
-            backgroundImage: `url(/lovable-uploads/5b973c6e-222e-409c-85f1-1fa4f4889812.png)`,
+            backgroundImage: `url(/lovable-uploads/64151993-464c-4540-9eb4-9c344a541911.png)`,
             backgroundAttachment: 'fixed'
           }}
         ></div>
