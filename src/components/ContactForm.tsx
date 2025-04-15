@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,7 +7,7 @@ import emailjs from "emailjs-com";
 
 // Updated EmailJS credentials
 const EMAILJS_SERVICE_ID = "service_3zhhm5v";
-const EMAILJS_TEMPLATE_ID = "template_i1bytcf";
+const EMAILJS_TEMPLATE_ID = "template_vzyfd8f"; // Updated template ID
 const EMAILJS_USER_ID = "B6tdpocoFnOyBSx-O";
 
 const ContactForm = () => {
