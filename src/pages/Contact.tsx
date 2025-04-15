@@ -2,8 +2,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-import { MapPin } from "lucide-react";
+import { MapPin, Navigation } from "lucide-react";
 import MetaTags from "@/components/MetaTags";
+import InteractiveMap from "@/components/InteractiveMap";
 
 const ContactPage = () => {
   return (
@@ -27,22 +28,22 @@ const ContactPage = () => {
         <div className="container-custom">
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold font-playfair mb-4">Our Location</h2>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center mb-2">
               <MapPin className="text-sooch-gold mr-2" />
               <p className="text-lg">506-218 Export Blvd, Mississauga, ON, L5S 0A7</p>
             </div>
+            <a 
+              href="https://www.google.com/maps/dir/?api=1&destination=506-218+Export+Blvd,+Mississauga,+ON,+L5S+0A7,+Canada" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sooch-gold hover:text-sooch-dark transition-colors"
+            >
+              <Navigation size={18} className="mr-1" />
+              <span>Get Directions</span>
+            </a>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.455752866566!2d-79.6739493!3d43.7094489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3aa78f2904b3%3A0xf2fd7de8bcde99c!2s218%20Export%20Blvd%2C%20Mississauga%2C%20ON%20L5S%200A7%2C%20Canada!5e0!3m2!1sen!2sus!4v1697635882841!5m2!1sen!2sus" 
-              width="100%" 
-              height="450" 
-              style={{ border: 0 }} 
-              allowFullScreen 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Sooch Law Office Location"
-            ></iframe>
+            <InteractiveMap />
           </div>
         </div>
       </section>
