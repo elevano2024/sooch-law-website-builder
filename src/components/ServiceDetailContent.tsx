@@ -1,5 +1,5 @@
 
-import { Building, FileText, Key, ThumbsUp, ShieldCheck, Home, Briefcase, ArrowRight, Phone, Clock, BarChart4, Award, Users, CheckCircle2 } from "lucide-react";
+import { Building, FileText, Key, ThumbsUp, ShieldCheck, Home, Briefcase, ArrowRight, Phone, Clock, BarChart4, Award, Users, CheckCircle2, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "./AnimatedElement";
 import { Card, CardContent } from "./ui/card";
