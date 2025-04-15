@@ -42,7 +42,7 @@ const ContactPage = () => {
             </a>
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg">
-            <InteractiveMap />
+            <InteractiveMap height="450px" />
           </div>
         </div>
       </section>

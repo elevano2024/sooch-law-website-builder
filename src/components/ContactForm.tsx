@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
+import InteractiveMap from "./InteractiveMap";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const ContactForm = () => {
               We're here to help with your legal needs. Fill out the form and we'll get back to you as soon as possible.
             </p>
             
-            <div className="space-y-6 mb-10">
+            <div className="space-y-6 mb-6">
               <div className="flex items-start">
                 <Phone className="text-sooch-gold mt-1 mr-4" />
                 <div>
@@ -82,12 +82,17 @@ const ContactForm = () => {
               </div>
             </div>
             
+            {/* Interactive Map */}
+            <div className="mb-6 rounded-lg overflow-hidden shadow-md">
+              <InteractiveMap height="200px" compact={true} />
+            </div>
+            
             <Link 
               to="/contact" 
-              className="inline-flex items-center text-sooch-gold hover:text-sooch-dark transition-colors mb-6"
+              className="inline-flex items-center text-sooch-gold hover:text-sooch-dark transition-colors"
             >
               <Navigation size={18} className="mr-1" />
-              <span>View Our Location On Map</span>
+              <span>View Full Map</span>
             </Link>
           </div>
           
