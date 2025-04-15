@@ -21,28 +21,28 @@ const Footer = () => {
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="bg-sooch-darkcard hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
+                className="bg-gray-700 hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
               <a 
                 href="#" 
-                className="bg-sooch-darkcard hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
+                className="bg-gray-700 hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
                 aria-label="Twitter"
               >
                 <Twitter size={20} />
               </a>
               <a 
                 href="#" 
-                className="bg-sooch-darkcard hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
+                className="bg-gray-700 hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a 
                 href="#" 
-                className="bg-sooch-darkcard hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
+                className="bg-gray-700 hover:bg-sooch-gold p-2 rounded-full transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
