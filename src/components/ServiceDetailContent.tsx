@@ -1,16 +1,13 @@
 
 import { useParams } from "react-router-dom";
-import { useRef } from "react";
 
-// Import all our new components
+// Import our streamlined components
 import ServiceHero from "./service-detail/ServiceHero";
 import StatsCounter from "./service-detail/StatsCounter";
 import ServicePricing from "./service-detail/ServicePricing";
 import ServiceProcess from "./service-detail/ServiceProcess";
 import ServiceFAQ from "./service-detail/ServiceFAQ";
-import ServiceDifferentiators from "./service-detail/ServiceDifferentiators";
 import ServiceTestimonials from "./service-detail/ServiceTestimonials";
-import QuickContact from "./service-detail/QuickContact";
 
 const servicesData = {
   "real-estate": {
@@ -86,17 +83,11 @@ const ServiceDetailContent = () => {
       {/* Stats Section */}
       <StatsCounter stats={serviceData.stats} />
       
-      {/* Quick Contact Form */}
-      <QuickContact />
-      
-      {/* Pricing Section */}
-      <ServicePricing />
-      
       {/* Our Process Section */}
       <ServiceProcess />
       
-      {/* Why Choose Us / Differentiators */}
-      <ServiceDifferentiators />
+      {/* Pricing Section */}
+      <ServicePricing />
       
       {/* Testimonials Section */}
       <ServiceTestimonials testimonials={serviceData.testimonials} />
