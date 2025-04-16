@@ -7,25 +7,25 @@ const ServiceProcess = () => {
       number: 1,
       title: "Initial Consultation",
       description: "We discuss your real estate goals and legal needs to develop a personalized strategy.",
-      image: "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80"
+      image: "https://images.unsplash.com/photo-1560518883-3d5aa21917c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2673&q=80"
     },
     {
       number: 2,
       title: "Document Review",
       description: "Our team thoroughly examines all legal documents to protect your interests.",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80"
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80"
     },
     {
       number: 3,
       title: "Due Diligence",
       description: "We conduct extensive research to identify and address potential legal issues.",
-      image: "/lovable-uploads/64151993-464c-4540-9eb4-9c344a541911.png"
+      image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2596&q=80"
     },
     {
       number: 4,
       title: "Closing",
       description: "We guide you through the final steps, ensuring a smooth and successful transaction.",
-      image: "https://images.unsplash.com/photo-1560518883-3d5aa21917c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2673&q=80"
+      image: "https://images.unsplash.com/photo-1580377968131-bab0ed9a1ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2673&q=80"
     }
   ];
 

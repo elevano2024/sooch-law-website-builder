@@ -18,7 +18,7 @@ const servicesData = {
     heading: "Expert Legal Services for Your Property Transactions",
     description: "Our experienced real estate lawyers provide comprehensive legal services for property transactions throughout the Greater Toronto Area. Whether you're buying, selling, or refinancing, our team ensures your interests are protected at every step.",
     image: "/lovable-uploads/06d3ec0c-2aa2-4f53-a861-95daba926881.png",
-    heroImage: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
+    heroImage: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
     heroVideo: "https://player.vimeo.com/progressive_redirect/playback/803544550/rendition/1080p/file.mp4?loc=external&signature=65ea6141111ee04e1cf562c5045e4d9c8f7e872ca5ad48168b3456bba67ae725",
     stats: [
       { value: "25+", label: "Years Experience" },
