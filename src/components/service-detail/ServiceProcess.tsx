@@ -1,5 +1,6 @@
 
 import AnimatedElement from "@/components/AnimatedElement";
+import { Building, FileText, Search, Key } from "lucide-react";
 
 const ServiceProcess = () => {
   const processSteps = [
@@ -7,30 +8,30 @@ const ServiceProcess = () => {
       number: 1,
       title: "Initial Consultation",
       description: "We discuss your real estate goals and legal needs to develop a personalized strategy.",
-      image: "https://images.unsplash.com/photo-1560518883-3d5aa21917c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2673&q=80"
+      icon: <Building className="w-10 h-10 text-law-primary" />,
     },
     {
       number: 2,
       title: "Document Review",
       description: "Our team thoroughly examines all legal documents to protect your interests.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2671&q=80"
+      icon: <FileText className="w-10 h-10 text-law-primary" />,
     },
     {
       number: 3,
       title: "Due Diligence",
       description: "We conduct extensive research to identify and address potential legal issues.",
-      image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2596&q=80"
+      icon: <Search className="w-10 h-10 text-law-primary" />,
     },
     {
       number: 4,
       title: "Closing",
       description: "We guide you through the final steps, ensuring a smooth and successful transaction.",
-      image: "https://images.unsplash.com/photo-1580377968131-bab0ed9a1ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2673&q=80"
+      icon: <Key className="w-10 h-10 text-law-primary" />,
     }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-gradient-to-b from-white to-law-tertiary">
       <div className="container-custom">
         <AnimatedElement>
           <h2 className="text-3xl md:text-4xl font-bold font-playfair text-center mb-4">
@@ -39,40 +40,35 @@ const ServiceProcess = () => {
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-8">
             We guide you through every step of your real estate transaction
           </p>
-          <div className="w-24 h-1 bg-law-secondary mx-auto mb-12"></div>
+          <div className="w-24 h-1 bg-law-secondary mx-auto mb-16"></div>
         </AnimatedElement>
 
-        <div className="relative">
-          {/* Process Timeline Line */}
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-1 bg-gray-200 transform -translate-x-1/2 z-0"></div>
-          
-          <div className="space-y-16 relative z-10">
-            {processSteps.map((step, index) => (
-              <AnimatedElement key={index} delay={index * 0.1}>
-                <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'md:rtl' : ''}`}>
-                  <div className={`${index % 2 === 1 ? 'md:text-left' : 'md:text-right'} md:ltr`}>
-                    <div 
-                      className={`mb-4 inline-flex items-center justify-center w-16 h-16 
-                        bg-law-primary text-white rounded-full text-2xl font-bold
-                        border-4 border-white shadow-lg`}
-                    >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {processSteps.map((step, index) => (
+            <AnimatedElement key={index} delay={index * 0.1}>
+              <div className="bg-white rounded-lg shadow-lg p-8 h-full border-t-4 border-law-secondary hover:shadow-xl transition-all duration-300 flex flex-col">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 h-16 rounded-full bg-law-tertiary flex items-center justify-center mb-2 relative">
+                    <span className="absolute -top-2 -right-2 bg-law-secondary text-law-primary w-8 h-8 rounded-full flex items-center justify-center font-bold text-lg">
                       {step.number}
-                    </div>
-                    <h3 className="text-2xl font-playfair font-bold mb-3">{step.title}</h3>
-                    <p className="text-gray-600">{step.description}</p>
-                  </div>
-                  <div className="hidden md:block ltr">
-                    <div className="rounded-lg overflow-hidden shadow-md 
-                      transform hover:scale-105 transition-transform duration-300
-                      border-2 border-law-tertiary hover:border-law-secondary">
-                      <img src={step.image} alt={step.title} className="w-full h-64 object-cover" />
-                    </div>
+                    </span>
+                    {step.icon}
                   </div>
                 </div>
-              </AnimatedElement>
-            ))}
-          </div>
+                <h3 className="text-xl font-playfair font-bold mb-4 text-center text-law-primary">{step.title}</h3>
+                <p className="text-gray-600 text-center flex-grow">{step.description}</p>
+              </div>
+            </AnimatedElement>
+          ))}
         </div>
+
+        <AnimatedElement delay={0.4}>
+          <div className="mt-16 text-center">
+            <p className="text-gray-700 italic max-w-2xl mx-auto">
+              "Our experienced attorneys have successfully guided over 5,000 clients through real estate transactions across Ontario."
+            </p>
+          </div>
+        </AnimatedElement>
       </div>
     </section>
   );
