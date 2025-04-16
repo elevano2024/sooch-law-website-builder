@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import AnimatedElement from "@/components/AnimatedElement";
@@ -26,7 +25,6 @@ const ServiceHero = ({ title, heading, description, heroVideo, heroImage }: Serv
   
   return (
     <section className="relative bg-law-dark text-white overflow-hidden">
-      {/* Video Background */}
       
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
         <video 
@@ -94,7 +92,7 @@ const ServiceHero = ({ title, heading, description, heroVideo, heroImage }: Serv
           <AnimatedElement delay={0.2}>
             <div className="hidden lg:block rounded-lg overflow-hidden shadow-2xl border-4 border-law-secondary transform rotate-2 hover:rotate-0 transition-all duration-300">
               <img 
-                src="/lovable-uploads/62f7ff6e-d134-4349-a5df-0bb1dbf4397e.png" 
+                src="https://images.unsplash.com/photo-1579140326932-d5d1ac44cf8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
                 alt="Real Estate Legal Documents and Paperwork" 
                 className="w-full h-full object-cover aspect-video"
               />
