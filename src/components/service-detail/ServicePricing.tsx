@@ -17,7 +17,7 @@ const ServicePricing = () => {
   const pricingItems: PricingItem[] = [
     {
       title: "Buying a Home",
-      price: "$790",
+      price: "Contact for Quote",
       description: "Complete legal representation for your home purchase",
       features: [
         "Title search & review",
@@ -30,7 +30,7 @@ const ServicePricing = () => {
     },
     {
       title: "Selling a Home",
-      price: "$590",
+      price: "Contact for Quote",
       description: "Expert guidance throughout the selling process",
       features: [
         "Document preparation",
@@ -43,7 +43,7 @@ const ServicePricing = () => {
     },
     {
       title: "Mortgage Refinancing",
-      price: "$790",
+      price: "Contact for Quote",
       description: "Comprehensive legal services for refinancing",
       features: [
         "Document review",
@@ -56,7 +56,7 @@ const ServicePricing = () => {
     },
     {
       title: "Title Transfer",
-      price: "$390",
+      price: "Contact for Quote",
       description: "Efficient title transfer between parties",
       features: [
         "Title search",
@@ -69,7 +69,7 @@ const ServicePricing = () => {
     },
     {
       title: "Independent Legal Advice",
-      price: "$500",
+      price: "Contact for Quote",
       description: "Professional legal consultation for your real estate matters",
       features: [
         "Document review",

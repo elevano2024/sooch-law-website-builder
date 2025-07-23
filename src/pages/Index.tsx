@@ -5,7 +5,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import ExpertiseAreas from "@/components/ExpertiseAreas";
 import ServicesShowcase from "@/components/ServicesShowcase";
-import Testimonials from "@/components/Testimonials";
+import GoogleTestimonials from "@/components/service-detail/GoogleTestimonials";
 import CallToAction from "@/components/CallToAction";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
@@ -21,7 +21,11 @@ const Index = () => {
       <ServicesShowcase />
       <About />
       <Services />
-      <Testimonials />
+      <GoogleTestimonials 
+        title="Client Feedback"
+        subtitle="Real reviews from satisfied clients across all our legal services"
+        ctaText="Get Started Today"
+      />
       <CallToAction />
       <ContactForm />
       <Footer />

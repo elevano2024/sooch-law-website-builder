@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import Testimonials from "@/components/Testimonials";
+import GoogleTestimonials from "@/components/service-detail/GoogleTestimonials";
 import ContactForm from "@/components/ContactForm";
 import MetaTags from "@/components/MetaTags";
 
@@ -25,7 +25,11 @@ const AboutPage = () => {
       </div>
       <About />
       <WhyChooseUs />
-      <Testimonials />
+      <GoogleTestimonials 
+        title="Client Testimonials"
+        subtitle="Hear from clients who have experienced our commitment to excellence"
+        ctaText="Contact Us Today"
+      />
       <ContactForm />
       <Footer />
     </div>

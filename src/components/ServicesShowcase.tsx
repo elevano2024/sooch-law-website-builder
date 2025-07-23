@@ -52,14 +52,14 @@ const ServicesShowcase = () => {
       title: "Immigration",
       description: "Assisting with various immigration matters and applications.",
       icon: <Globe className="h-10 w-10 text-sooch-gold" />,
-      image: "https://images.unsplash.com/photo-1569974571645-41876d5b1959?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80",
+      image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80",
       slug: "immigration"
     },
     {
       title: "Family Law",
       description: "Compassionate guidance through divorce, custody, and support matters.",
       icon: <Users className="h-10 w-10 text-sooch-gold" />,
-      image: "https://images.unsplash.com/photo-1624433287687-1206e845f12c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2675&q=80",
+      image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80",
       slug: "family-law"
     },
   ];
