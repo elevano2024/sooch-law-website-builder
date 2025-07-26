@@ -51,7 +51,6 @@ const Hero = () => {
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
               className="text-xl md:text-2xl mb-8 text-gray-200"
             >
-              The expertise you need, the attention you deserve.
             </motion.p>
             
             <motion.div 
