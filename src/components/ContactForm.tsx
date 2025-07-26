@@ -7,9 +7,9 @@ import { toast } from "@/components/ui/sonner";
 import emailjs from "emailjs-com";
 
 // Updated EmailJS credentials
-const EMAILJS_SERVICE_ID = "service_l3w246u";
+const EMAILJS_SERVICE_ID = "service_3zhhm5v";
 const EMAILJS_TEMPLATE_ID = "template_iv56ydw";
-const EMAILJS_USER_ID = "lTW-SHGL2sZD5EDdQ"; // This is the public key
+const EMAILJS_USER_ID = "B6tdpocoFnOyBSx-O";  // This is the public key
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
