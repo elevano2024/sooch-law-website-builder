@@ -2,7 +2,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
 import ExpertiseAreas from "@/components/ExpertiseAreas";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import GoogleTestimonials from "@/components/service-detail/GoogleTestimonials";
@@ -20,8 +19,7 @@ const Index = () => {
       <ExpertiseAreas />
       <ServicesShowcase />
       <About />
-      <Services />
-      <GoogleTestimonials 
+      <GoogleTestimonials
         title="Client Feedback"
         subtitle="Real reviews from satisfied clients across all our legal services"
         ctaText="Get Started Today"
